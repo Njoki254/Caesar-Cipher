@@ -12,6 +12,11 @@ public class Encoding {
         for(int i= 0; i<length; i++){
             char ch = plainText.charAt(i);
             if(Character.isLetter(ch)){
+                
+            }
+            else{
+                encodedText += ch;
+            }
         }
         return encodedText;
 
