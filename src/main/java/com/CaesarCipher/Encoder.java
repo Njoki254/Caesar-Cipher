@@ -61,5 +61,15 @@ public class Encoder{
         return secretText;
     }
 
+    public void main(String args){
+        String text = "This is a message";
+        Encoder theSecret = new Encoder(text, 6);
+        System.out.println(secretText);
+        String decodedMessage = new Decoder(theSecret, 5);
+        System.out.println(decodedMessage);
+
+
+    }
+
 }
 
