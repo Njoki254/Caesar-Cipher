@@ -24,9 +24,9 @@ public class Encoder{
         //get length to know how many times the shift method needs to loop through
         int length = message.length();
 
-      
+
     }
-    public String shiftandEncodeCharacters(String message, int shiftBy ){
+    public static void shiftandEncodeCharacters(String message, int shiftBy ){
         int length = message.length();
         for(int i= 0; i<length; i++){
             char ch = message.charAt(i);
@@ -63,10 +63,11 @@ public class Encoder{
 
     public void main(String args){
         Encoder.ValidateUserInput();
-        Encoder theSecret = new Encoder(text, 6);
+        Encoder.calculateLength("It is working");
+        Encoder.shiftandEncodeCharacters("It is working", 5);
         System.out.println(secretText);
-        String decodedMessage = new Decoder(theSecret, 5);
-        System.out.println(decodedMessage);
+        System.out.println("Now try having your own message ciphered");
+
 
 
     }
