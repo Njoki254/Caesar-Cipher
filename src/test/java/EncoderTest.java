@@ -1,3 +1,4 @@
+import com.CaesarCipher.Encoder;
 import org.junit.*;
 import static org.junit.Assert.*;
 import java.lang.*;

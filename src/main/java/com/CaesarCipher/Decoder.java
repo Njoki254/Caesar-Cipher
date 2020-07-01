@@ -1,8 +1,15 @@
+package com.CaesarCipher;
+
 import java.lang.*;
 
-public class Encoder{
+public class Decoder{
+
+
     String secretText = "";
-//two parameters needed, plainText= code being encrypted, shiftby is the number
+
+
+
+    //two parameters needed, plainText= code being encrypted, shiftby is the number
     public String ValidateUserInput(String message, int shiftBy) {
 //validation part of the code in case of - or # greater than 26, for unwanted user input
         if (shiftBy > 26) {
@@ -23,7 +30,7 @@ public class Encoder{
 
         return length;
     }
-    public String shiftandEncodeCharacters(String message, int shiftBy ){
+    public String shiftandDecodeCharacters(String message, int shiftBy ){
         int length = message.length();
         for(int i= 0; i<length; i++){
             char ch = message.charAt(i);
@@ -31,18 +38,18 @@ public class Encoder{
             if(Character.isLetter(ch)){
                 //check if letter is upper or lower case, need integer value for each character from table ascii table each character assigned its own value
                 if(Character.isLowerCase(ch)){
-                    char c = (char)(ch + shiftBy);
-                    if(c>'z'){
-                        secretText +=(char)(ch- (26 - shiftBy));
+                    char c = (char)(ch - shiftBy);
+                    if(c<'a'){
+                        secretText +=(char)(ch+ (26 - shiftBy));
                     }
                     else{
                         secretText += c;
                     }
                 }
                 else if(Character.isUpperCase(ch)){
-                    char c = (char)(ch + shiftBy);
-                    if(c>'Z'){
-                        secretText +=(char)(ch- (26 - shiftBy));
+                    char c = (char)(ch - shiftBy);
+                    if(c<'A'){
+                        secretText +=(char)(ch+ (26 - shiftBy));
                     }
                     else{
                         secretText += c;

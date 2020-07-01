@@ -1,3 +1,4 @@
+import com.CaesarCipher.Encoder;
 import org.junit.*;
 import static org.junit.Assert.*;
 import java.lang.*;
@@ -20,7 +21,7 @@ public class DecoderTest {
     @Test
     public void testShiftAndDecode(){
 
-        assertEquals("Izxjyz0hz",cipher.shiftandEncodeCharacters("Decode me", 5) );
+        assertEquals("Ijhtij0rj",cipher.shiftandEncodeCharacters("Decode me", 5) );
 
 
     }
