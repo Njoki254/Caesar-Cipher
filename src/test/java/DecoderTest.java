@@ -1,5 +1,5 @@
 import junit.framework.TestCase;
 
-public class EncodingTest{
+public class DecoderTest {
 
 }
