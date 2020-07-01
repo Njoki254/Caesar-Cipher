@@ -6,7 +6,7 @@ public class Encoder{
 
     String secretText = "";
 //two parameters needed, plainText= code being encrypted, shiftby is the number
-    public String ValidateUserInput(String message, int shiftBy) {
+    public static void ValidateUserInput(String message, int shiftBy) {
 //validation part of the code in case of - or # greater than 26, for unwanted user input
         if (shiftBy > 26) {
             shiftBy = shiftBy % 26;
@@ -14,9 +14,9 @@ public class Encoder{
             shiftBy = (shiftBy % 26) + 26;
         }
         String tester = "It's working";
-        return tester;
+
     }
-    public Integer calculateLength (String message){
+    public static void  calculateLength (String message){
         //the return value
 
         //.length gives the number of characters in a word, message in this case
@@ -24,7 +24,7 @@ public class Encoder{
         //get length to know how many times the shift method needs to loop through
         int length = message.length();
 
-        return length;
+      
     }
     public String shiftandEncodeCharacters(String message, int shiftBy ){
         int length = message.length();
@@ -62,13 +62,16 @@ public class Encoder{
     }
 
     public void main(String args){
-        String text = "This is a message";
+        Encoder.ValidateUserInput();
         Encoder theSecret = new Encoder(text, 6);
         System.out.println(secretText);
         String decodedMessage = new Decoder(theSecret, 5);
         System.out.println(decodedMessage);
 
 
+    }
+
+    private static void ValidateUserInput() {
     }
 
 }
