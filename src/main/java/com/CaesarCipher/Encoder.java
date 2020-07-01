@@ -4,10 +4,9 @@ import java.lang.*;
 
 public class Encoder{
 
-    private static char secretText;
-
+    String secretText = "";
 //two parameters needed, plainText= code being encrypted, shiftby is the number
-    public static void ValidateUserInput(String message, int shiftBy) {
+    public String ValidateUserInput(String message, int shiftBy) {
 //validation part of the code in case of - or # greater than 26, for unwanted user input
         if (shiftBy > 26) {
             shiftBy = shiftBy % 26;
@@ -15,9 +14,9 @@ public class Encoder{
             shiftBy = (shiftBy % 26) + 26;
         }
         String tester = "It's working";
-
+        return tester;
     }
-    public static void  calculateLength (String message){
+    public Integer calculateLength (String message){
         //the return value
 
         //.length gives the number of characters in a word, message in this case
@@ -25,9 +24,9 @@ public class Encoder{
         //get length to know how many times the shift method needs to loop through
         int length = message.length();
 
-
+        return length;
     }
-    public static void shiftandEncodeCharacters(String message, int shiftBy ){
+    public String shiftandEncodeCharacters(String message, int shiftBy ){
         int length = message.length();
         for(int i= 0; i<length; i++){
             char ch = message.charAt(i);
@@ -59,21 +58,13 @@ public class Encoder{
             }
         }
 
-        
+        return secretText;
     }
 
     public void main(String args){
-        Encoder.ValidateUserInput();
-        Encoder.calculateLength("It is working");
-        Encoder.shiftandEncodeCharacters("It is working", 5);
-        System.out.println(secretText);
-        System.out.println("Now try having your own message ciphered");
 
 
 
-    }
-
-    private static void ValidateUserInput() {
     }
 
 }
