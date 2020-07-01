@@ -12,7 +12,8 @@
 
 ## Deployed Site 
 [Caesar Cipher](https://njoki254.github.io/Caesar-Cipher/.)
-##Visual for a Cipher
+
+## Visual for a Cipher
 ![**Visual for a Caesar Cipher*](https://www.secplicity.org/wp-content/uploads/2017/05/Caesar_substition_cipher-750x393.png)
 
 ## BDD
