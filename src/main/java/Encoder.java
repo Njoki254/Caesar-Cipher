@@ -31,7 +31,7 @@ public class Encoder{
             if(Character.isLetter(ch)){
                 //check if letter is upper or lower case, need integer value for each character from table ascii table each character assigned its own value
                 if(Character.isLowerCase(ch)){
-                    char c = (char)(ch - shiftBy);
+                    char c = (char)(ch + shiftBy);
                     if(c>'z'){
                         secretText +=(char)(ch- (26 - shiftBy));
                     }
@@ -40,7 +40,7 @@ public class Encoder{
                     }
                 }
                 else if(Character.isUpperCase(ch)){
-                    char c = (char)(ch - shiftBy);
+                    char c = (char)(ch + shiftBy);
                     if(c>'Z'){
                         secretText +=(char)(ch- (26 - shiftBy));
                     }

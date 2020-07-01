@@ -20,7 +20,7 @@ public class EncoderTest {
     @Test
     public void testShiftAndEncode(){
 
-        assertEquals("Izxjyz0hz",cipher.shiftandEncodeCharacters("Decode me", 5) );
+        assertEquals("Ijhtij0rj",cipher.shiftandEncodeCharacters("Decode me", 5) );
 
 
     }
