@@ -44,6 +44,6 @@
 - Markdown
 - Java
 
-MIT Licence
+** MIT Licence ** 
 
 ** Copyright (c) 2019 Njoki Kamau **
