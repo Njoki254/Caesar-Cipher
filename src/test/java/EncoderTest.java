@@ -17,6 +17,13 @@ public class EncoderTest {
         int message = 7;
         assertEquals(new Integer(message),cipher.calculateLength("message"));
     }
+    @Test
+    public void testShiftAndEncode(){
+
+        assertEquals("Izxjyz0hz",cipher.shiftandEncodeCharacters("Decode me", 5) );
+
+
+    }
 
 
 }
