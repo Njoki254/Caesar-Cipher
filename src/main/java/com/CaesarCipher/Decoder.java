@@ -5,8 +5,9 @@ import java.lang.*;
 public class Decoder{
 
 
-    String secretText = "";
-
+    private static String message = "";
+    private static int shiftyBy;
+    private static String secretText = "";
 
 
     //two parameters needed, plainText= code being encrypted, shiftby is the number
@@ -64,5 +65,13 @@ public class Decoder{
 
         return secretText;
     }
+    public int getShiftBy(){
+        return shiftyBy;
+    }
+    public String getMessage(){
+        return message;
+    }
+    public void setSecretText(String secretText){
+        this.secretText = secretText;
 
 }
