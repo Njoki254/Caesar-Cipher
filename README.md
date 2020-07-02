@@ -10,7 +10,7 @@
  messages inputed by the user. It is useful to those interested in sending secret messages across technologies
  .The famous Julius Caesar in Roman history used the system to communicate confidential matters.  
 
-## Deployed Site 
+## Site 
 [Caesar Cipher](https://njoki254.github.io/Caesar-Cipher/.)
 
 ## Visual for a Cipher
