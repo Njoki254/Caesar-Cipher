@@ -2,7 +2,7 @@ package com.CaesarCipher;
 
 import java.lang.*;
 
-public class Decoder{
+public class Decoder {
 
 
     private static String message = "";
@@ -21,7 +21,8 @@ public class Decoder{
         String tester = "It's working";
         return tester;
     }
-    public Integer calculateLength (String message){
+
+    public Integer calculateLength(String message) {
         //the return value
 
         //.length gives the number of characters in a word, message in this case
@@ -31,47 +32,48 @@ public class Decoder{
 
         return length;
     }
-    public String shiftandDecodeCharacters(String message, int shiftBy ){
+
+    public String shiftandDecodeCharacters(String message, int shiftBy) {
         int length = message.length();
-        for(int i= 0; i<length; i++){
+        for (int i = 0; i < length; i++) {
             char ch = message.charAt(i);
             //to check if character is letter
-            if(Character.isLetter(ch)){
+            if (Character.isLetter(ch)) {
                 //check if letter is upper or lower case, need integer value for each character from table ascii table each character assigned its own value
-                if(Character.isLowerCase(ch)){
-                    char c = (char)(ch - shiftBy);
-                    if(c<'a'){
-                        secretText +=(char)(ch+ (26 - shiftBy));
-                    }
-                    else{
+                if (Character.isLowerCase(ch)) {
+                    char c = (char) (ch - shiftBy);
+                    if (c < 'a') {
+                        secretText += (char) (ch + (26 - shiftBy));
+                    } else {
                         secretText += c;
                     }
-                }
-                else if(Character.isUpperCase(ch)){
-                    char c = (char)(ch - shiftBy);
-                    if(c<'A'){
-                        secretText +=(char)(ch+ (26 - shiftBy));
-                    }
-                    else{
+                } else if (Character.isUpperCase(ch)) {
+                    char c = (char) (ch - shiftBy);
+                    if (c < 'A') {
+                        secretText += (char) (ch + (26 - shiftBy));
+                    } else {
                         secretText += c;
                     }
 
                 }
-            }
-            else{
+            } else {
                 secretText += 0;
             }
         }
 
         return secretText;
     }
-    public int getShiftBy(){
+
+    public int getShiftBy() {
         return shiftyBy;
     }
-    public String getMessage(){
+
+    public String getMessage() {
         return message;
     }
-    public void setSecretText(String secretText){
+
+    public void setSecretText(String secretText) {
         this.secretText = secretText;
 
+    }
 }
