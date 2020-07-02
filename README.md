@@ -10,7 +10,7 @@
  messages inputed by the user. It is useful to those interested in sending secret messages across technologies
  .The famous Julius Caesar in Roman history used the system to communicate confidential matters.  
 
-## Deployed Site 
+## Site 
 [Caesar Cipher](https://njoki254.github.io/Caesar-Cipher/.)
 
 ## Visual for a Cipher
@@ -25,6 +25,15 @@
 |words in text are shifted and encrypted| used Characters and java methods, for loops and conditional statements| The function encodes message|
 |encrypted words are decrypted|changed origin encode code to fit decoding|Encoded code is decoded into readable format.|
 
+## How to Set Up
+
+- Ensure all requirements for running java applications are installed;
+    - JUnit, 
+    - Intellij,
+    - SDK,
+    - JDK.
+- Clone to your local machine
+- Run the java files to compile and the test files to test functionality
 
 
 
