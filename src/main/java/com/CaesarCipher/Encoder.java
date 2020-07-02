@@ -4,7 +4,10 @@ import java.lang.*;
 
 public class Encoder{
 
-    String secretText = "";
+    private static String message = "";
+    private static int shiftyBy;
+    private static String secretText = "";
+
     //two parameters needed, plainText= code being encrypted, shiftby is the number
     public String ValidateUserInput(String message, int shiftBy) {
 //validation part of the code in case of - or # greater than 26, for unwanted user input
@@ -61,10 +64,14 @@ public class Encoder{
         return secretText;
     }
 
-    public void main(String args){
-
-
-
+    public int getShiftBy(){
+        return shiftyBy;
+    }
+    public String getMessage(){
+        return message;
+    }
+    public void setSecretText(String secretText){
+        this.secretText = secretText;
     }
 
 }
