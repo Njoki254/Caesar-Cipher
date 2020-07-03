@@ -1,5 +1,3 @@
-package com.CaesarCipher;
-
 import java.lang.*;
 
 public class Decoder {
@@ -7,7 +5,7 @@ public class Decoder {
 
     private static String message = "";
     private static int shiftyBy;
-    private static String secretText = "";
+    private static String decryptText = "";
 
 
     //two parameters needed, plainText= code being encrypted, shiftby is the number
@@ -43,37 +41,36 @@ public class Decoder {
                 if (Character.isLowerCase(ch)) {
                     char c = (char) (ch - shiftBy);
                     if (c < 'a') {
-                        secretText += (char) (ch + (26 - shiftBy));
+                        decryptText += (char) (ch + (26 - shiftBy));
                     } else {
-                        secretText += c;
+                        decryptText += c;
                     }
                 } else if (Character.isUpperCase(ch)) {
                     char c = (char) (ch - shiftBy);
                     if (c < 'A') {
-                        secretText += (char) (ch + (26 - shiftBy));
+                        decryptText += (char) (ch + (26 - shiftBy));
                     } else {
-                        secretText += c;
+                        decryptText += c;
                     }
 
                 }
             } else {
-                secretText += 0;
+                decryptText += 0;
             }
         }
 
-        return secretText;
+        return decryptText;
     }
 
-    public int getShiftBy() {
+    public int getShiftBy(int number) {
         return shiftyBy;
     }
 
-    public String getMessage() {
+    public String getMessage(String message) {
         return message;
     }
 
-    public void setSecretText(String secretText) {
-        this.secretText = secretText;
-
+    public static String getDecryptedText(String message){
+        return decryptText;
     }
 }
