@@ -1,15 +1,17 @@
-package com.CaesarCipher;
 
 import java.lang.*;
 
 public class Encoder{
 
     private static String message = "";
-    private static int shiftyBy;
-    private static String secretText = "";
+    private static int shiftBy;
+    private static String encryptText = "";
+
+
 
     //two parameters needed, plainText= code being encrypted, shiftby is the number
     public String ValidateUserInput(String message, int shiftBy) {
+        this.message = message;
 //validation part of the code in case of - or # greater than 26, for unwanted user input
         if (shiftBy > 26) {
             shiftBy = shiftBy % 26;
@@ -39,39 +41,39 @@ public class Encoder{
                 if(Character.isLowerCase(ch)){
                     char c = (char)(ch + shiftBy);
                     if(c>'z'){
-                        secretText +=(char)(ch- (26 - shiftBy));
+                        encryptText +=(char)(ch- (26 - shiftBy));
                     }
                     else{
-                        secretText += c;
+                        encryptText += c;
                     }
                 }
                 else if(Character.isUpperCase(ch)){
                     char c = (char)(ch + shiftBy);
                     if(c>'Z'){
-                        secretText +=(char)(ch- (26 - shiftBy));
+                        encryptText +=(char)(ch- (26 - shiftBy));
                     }
                     else{
-                        secretText += c;
+                        encryptText += c;
                     }
 
                 }
             }
             else{
-                secretText += 0;
+                encryptText += 0;
             }
         }
 
-        return secretText;
+        return encryptText;
     }
 
-    public int getShiftBy(){
-        return shiftyBy;
+    public int getShiftBy(int number){
+        return shiftBy;
     }
-    public String getMessage(){
+    public String getMessage(String message){
         return message;
     }
-    public void setSecretText(String secretText){
-        this.secretText = secretText;
+    public static String getEncryptedText(String message){
+        return encryptText;
     }
 
 }
