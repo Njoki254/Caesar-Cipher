@@ -27,10 +27,9 @@ public class App {
             userAction = myScanner.nextLine();
 
             if (userAction.equals("exit"))
-                System.out.println("I hoper you had a great experience. See yah later!")
                 break;
 
-                System.out.println("Enter the message: ");
+            System.out.println("Enter the message: ");
             //create variable to hold the user input
             userInput = myScanner.nextLine();
 
@@ -42,17 +41,18 @@ public class App {
                 int intNumber = Integer.parseInt(shiftNumber);
                 decodeMessage.setShiftyBy(intNumber);
                 String dcd = decodeMessage.run();
+                System.out.println("Below is the decoded message");
                 System.out.println(dcd);
             }
-            else if (userInput.equalsIgnoreCase("encode")){
+            else if (userAction.equalsIgnoreCase("encode")){
                 encodeMessage.setMessage(userInput);
                 System.out.println("Enter the number you want words to be shifted by");
                 String shiftNumber = myScanner.nextLine();
                 int intNumber = Integer.parseInt(shiftNumber);
                 encodeMessage.setShiftyBy(intNumber);
                 String ecd = encodeMessage.run();
+                System.out.println("Below is the encoded message");
                 System.out.println(ecd);
-
 
             }
 
