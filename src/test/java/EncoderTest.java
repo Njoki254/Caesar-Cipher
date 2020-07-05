@@ -5,39 +5,42 @@ import java.lang.*;
 
 
 public class EncoderTest {
-    Encoder encoded = new Encoder();
+    static Encoder encoded = new Encoder();
+
+    //need to set before getting below in the last few tests of getmethods
+    static {
+        encoded.setMessage("Decode me");
+        encoded.setShiftyBy(4);
+    }
 
     @Test
-    public void ValidateInput_validationTestForUserInput(){
+    public void ValidateInput_validationTestForUserInput() {
 
-        assertEquals("It's working", encoded.ValidateUserInput("",4));
+        assertEquals("It's working", encoded.ValidateUserInput(4));
 
     }
+
     @Test
-    public void testCalculateLength(){
+    public void testCalculateLength() {
         int message = 7;
-        assertEquals(new Integer(message),encoded.calculateLength("message"));
-    }
-    @Test
-    public void testShiftAndEncode(){
-
-        assertEquals("Ijhtij0rj",encoded.shiftandEncodeCharacters("Decode me", 5) );
-
-
-    }
-    @Test
-    public void testGetmessage(){
-        assertEquals("Encode me", encoded.getMessage("Encode me"));
+        assertEquals(new Integer(message), encoded.calculateLength("message"));
     }
 
     @Test
-    public void testGetShiftBy(){
-        assertEquals(0, encoded.getShiftBy(5));
+    public void testShiftAndDecode() {
+
+        assertEquals("Yzxjyz0hz", encoded.shiftandEncodeCharacters("Decode me", 5));
+
+
     }
+
     @Test
-    public void testGetEncryptedTest(){
-        assertEquals("Ijhtij0rj", encoded.getEncryptedText("encode me"));
+    public void testGetmessage() {
+        assertEquals("Decode me", encoded.getMessage());
     }
 
-
+    @Test
+    public void testGetShiftBy() {
+        assertEquals(4, encoded.getShiftBy());
+    }
 }
