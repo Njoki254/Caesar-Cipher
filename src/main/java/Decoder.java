@@ -2,14 +2,13 @@ import java.lang.*;
 
 public class Decoder {
 
-
-    private static String message = "";
-    private static int shiftyBy;
-    private static String decryptText = "";
-
+    static String exmp = "nlvlclldld";
+    private String message = "";
+    private int shiftyBy;
+    private String decryptText = "";
 
     //two parameters needed, plainText= code being encrypted, shiftby is the number
-    public String ValidateUserInput(String message, int shiftBy) {
+    public String ValidateUserInput(int shiftBy) {
 //validation part of the code in case of - or # greater than 26, for unwanted user input
         if (shiftBy > 26) {
             shiftBy = shiftBy % 26;
@@ -32,7 +31,7 @@ public class Decoder {
     }
 
     public String shiftandDecodeCharacters(String message, int shiftBy) {
-        int length = message.length();
+        int length = calculateLength(message);
         for (int i = 0; i < length; i++) {
             char ch = message.charAt(i);
             //to check if character is letter
@@ -62,15 +61,26 @@ public class Decoder {
         return decryptText;
     }
 
-    public int getShiftBy(int number) {
+    public void setMessage(String message) {
+        //take class variable and equate it to parameter/user input
+        this.message = message;
+    }
+
+    public void setShiftyBy(int shiftyBy) {
+        this.shiftyBy = shiftyBy;
+    }
+
+    public int getShiftBy() {
         return shiftyBy;
     }
 
-    public String getMessage(String message) {
+    public String getMessage() {
         return message;
     }
 
-    public static String getDecryptedText(String message){
-        return decryptText;
+    public String run(){
+        String decryptedText = shiftandDecodeCharacters(getMessage(),getShiftBy());
+        return decryptedText;
+
     }
 }
